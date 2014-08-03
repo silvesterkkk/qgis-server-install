@@ -14,14 +14,14 @@ http://anitagraser.com/2012/04/06/qgis-server-on-windows7-step-by-step/)
 
 1. Download OSGeo4W installer from [HERE]
 2. I have downloaded the 32-bit version although running a 64-bit machine.
-3. Execute the file and select the followings
-  - Advanced Install, **NEXT**
-  - Install from internet, **NEXT**
-  - Accept the default (unless you want to chage), **NEXT**
-  - Accept the default (unless you want to chage), **NEXT**
+3. Execute the file and follow the prompt.
+  - Select advanced Install, **NEXT**
+  - Select Install from internet, **NEXT**
+  - Accept the default (unless you want to change), **NEXT**
+  - Accept the default (unless you want to change), **NEXT**
   - Select connection option (I've used 'Direct connection'), **NEXT**
   - Select available download sites: Should only one available **NEXT**
-
+  - Once you get to the 'Select packages' window, select the following options.
 
   ![alt tag](http://)
 
