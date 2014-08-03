@@ -1,4 +1,4 @@
-qgis-server-installation instruction (Based on Windows 7, August 2014)
+qgis-server-installation procedure (Based on Windows 7, August 2014)
 ===================
 
 This instruction is constructed from resources available on the web.
