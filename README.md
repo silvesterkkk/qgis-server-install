@@ -23,9 +23,9 @@ http://anitagraser.com/2012/04/06/qgis-server-on-windows7-step-by-step/)
   - Select available download sites: Should only one available **NEXT**
   - Once you get to the 'Select packages' window, select the following options (All other dependencies will be automatically selected and installed).
     - Under DESKTOP, select `qgis: QGIS Desktop` & `qgis-dev: QGIS nightly build of the master`
-  ![alt tag](https://cloud.githubusercontent.com/assets/8164012/3790271/e8c9bb06-1af4-11e4-9ee7-fa122374970e.png)
+    ![alt text](https://cloud.githubusercontent.com/assets/8164012/3790271/e8c9bb06-1af4-11e4-9ee7-fa122374970e.png)
     - Under WEB, select `qgis-server: QGIS Server`
-  ![alt tag](https://cloud.githubusercontent.com/assets/8164012/3790272/eaf76838-1af4-11e4-9e37-f5f15b76eec8.png)
+    ![alt text](https://cloud.githubusercontent.com/assets/8164012/3790272/eaf76838-1af4-11e4-9e37-f5f15b76eec8.png)
 
 
 [HERE]:https://www.qgis.org/en/site/forusers/download.html
