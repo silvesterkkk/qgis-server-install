@@ -24,8 +24,30 @@ http://anitagraser.com/2012/04/06/qgis-server-on-windows7-step-by-step/)
   - Once you get to the 'Select packages' window, select the following options (All other dependencies will be automatically selected and installed).
     - Under DESKTOP, select `qgis: QGIS Desktop` & `qgis-dev: QGIS nightly build of the master`
     ![alt text](https://cloud.githubusercontent.com/assets/8164012/3790271/e8c9bb06-1af4-11e4-9ee7-fa122374970e.png)
-    - Under WEB, select `qgis-server: QGIS Server`
+    - Under WEB, select `Apache Webserver` & `qgis-server: QGIS Server`
     ![alt text](https://cloud.githubusercontent.com/assets/8164012/3790272/eaf76838-1af4-11e4-9e37-f5f15b76eec8.png)
+
+Edit config file
+----------------
+
+1. QGIS on windows seems not to work as FastCGI, so open & edit the following file
+  `c:/osgeo4w/httpd.d/httpd_qgis.conf`
+
+```
+LoadModule fcgid_module modules/mod_fcgid.so
+
+to
+
+LoadModule cgi_module modules/mod_cgi.so
+```
+
+```
+DefaultInitEnv
+
+to
+
+SetEnv
+```
 
 
 [HERE]:https://www.qgis.org/en/site/forusers/download.html
