@@ -1,14 +1,16 @@
-qgis-server-installation procedure (Based on Windows 7, August 2014)
-===================
+#QGIS Server and QGIS WebClient installation procedure (Based on Windows 7, August 2014)#
+
 
 This instruction is constructed from resources available on the web.
 
 CONTENTS
-- Installation
-- Edit config file
+* Installation
+* Edit config file / Modify file extention
+* QGIS server validation
+* Download & install QGIS WebClient
 
-Installation
-------------
+##Installation##
+
 (This is based on the instruction from the following site:
 http://anitagraser.com/2012/04/06/qgis-server-on-windows7-step-by-step/)
 
@@ -27,31 +29,34 @@ http://anitagraser.com/2012/04/06/qgis-server-on-windows7-step-by-step/)
     - Under WEB, select `Apache Webserver` & `qgis-server: QGIS Server`
     ![alt text](https://cloud.githubusercontent.com/assets/8164012/3790272/eaf76838-1af4-11e4-9e37-f5f15b76eec8.png)
 
-Edit config file
-----------------
+##Edit config file##
 
-1. EDIT httpd_qgis.conf:<br/>
-   This is required because QGIS on windows seems not to work as FastCGI<br/>
-	1.1 Locate the following file and open in text editor.<br/>
-   	`c:/osgeo4w/httpd.d/httpd_qgis.conf`<br/>
-	
-	1.2 Change the following lines of code
-	```
-	LoadModule fcgid_module modules/mod_fcgid.so
-	to
-	LoadModule cgi_module modules/mod_cgi.so
-	```
-	```
-	DefaultInitEnv
-	to
-	SetEnv
-	```
+####1. EDIT httpd_qgis.conf ####
+:This is required because QGIS on windows seems not to work as FastCGI<br/>
+  * Locate the following file and open in text editor.<br/>
+    `c:\osgeo4w\httpd.d\httpd_qgis.conf`<br/>
+  * Change the following lines of code<br/>
+```
+LoadModule fcgid_module modules/mod_fcgid.so
+to
+LoadModule cgi_module modules/mod_cgi.so
+```
+```
+DefaultInitEnv
+to
+SetEnv
+```
 
-2. Locate the following file <br/> `C:\OSGeo4W\apps\qgis\bin\qgis_mapserv.fcgi.exe`<br/>
-   
-	```
-	This is required because the QGIS WebClient which you will install later, can NOT address *.exe files, although 	the QGIS Server could.
-	
-	
+####2. CHANGE qgis_mapserv.fcgi.exe ####
+: This is required because the QGIS WebClient which you will install later, can NOT address *.exe files, although 	the QGIS Server could.<br/>
+  * Locate the following file.<br/>
+    `c:\OSGeo4W\apps\qgis\bin\qgis_mapserv.fcgi.exe`<br/>
+  * Delete the extention of the file so that it looks like the following.<br/>
+    `c:\OSGeo4W\apps\qgis\bin\qgis_mapserv.fcgi`
+
+####3. QGIS server validation ####
+: This step will validate the installation of QGIS server.<br/>
+  * Type the following URL to your web browser.<br/>
+    `http://localhost/qgis/qgis_mapserv.fcgi?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities`
 
 [HERE]:https://www.qgis.org/en/site/forusers/download.html
