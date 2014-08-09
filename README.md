@@ -3,7 +3,7 @@
 
 This instruction is constructed from resources available on the web.
 
-CONTENTS
+##CONTENTS##
 * Installation
 * Edit config file / Modify file extention
 * QGIS server validation
@@ -29,7 +29,7 @@ CONTENTS
 
 ##Edit config file##
 
-####1. EDIT httpd_qgis.conf ####
+####1. EDIT httpd_qgis.conf####
 :This is required because QGIS on windows seems not to work as FastCGI<br/>
   * Locate the following file and open in text editor.<br/>
     `c:\osgeo4w\httpd.d\httpd_qgis.conf`<br/>
@@ -45,7 +45,7 @@ to
 SetEnv
 ```
 
-####2. CHANGE qgis_mapserv.fcgi.exe ####
+####2. CHANGE qgis_mapserv.fcgi.exe####
 : This is required because the QGIS WebClient which you will install later, can NOT address *.exe files, although 	the QGIS Server could.<br/>
   * Locate the following file.<br/>
     `c:\OSGeo4W\apps\qgis\bin\qgis_mapserv.fcgi.exe`<br/>
@@ -61,10 +61,10 @@ SetEnv
     `http://localhost/qgis/qgis_mapserv.fcgi?SERVICE=WMS&VERSION=1.3.0&SRS=EPSG:31467&REQUEST=GetMap&map=C:/path-to-a-simple-qgis-project.qgs&WIDTH=1000&HEIGHT=800&LAYERS=weg,bach&FORMAT=image/png`
   
 ###Download and install QGIS WebClient###
-####1. What is QGIS WebClient & why do you need it? ####
+####1. What is QGIS WebClient & why do you need it?####
   * Under construction
 
-####2. Download QGIS WebClient ####
+####2. Download QGIS WebClient####
   * Go to the following GitHub site: https://github.com/qgis/QGIS-Web-Client
   * Download the project as ZIP file (there is a link to your right pane).
   * Unzip the file to the following location.
@@ -81,7 +81,7 @@ ScriptAlias /cgi-bin/ "C:\OSGeo4W/bin/"
 to
 ScriptAlias /cgi-bin/ "C:\OSGeo4W/apps/qgis/bin/"
 ```
-####4. Restart Apache ####
+####4. Restart Apache####
   * You need to restart Apache everytime you make changes to the Apache config file.
   * You can do this by:
     `START MENU --> Programs --> OSGeo4W --> Apache`
