@@ -8,11 +8,9 @@ CONTENTS
 * Edit config file / Modify file extention
 * QGIS server validation
 * Download & install QGIS WebClient
+* References
 
 ##Installation##
-
-(This is based on the instruction from the following site:
-http://anitagraser.com/2012/04/06/qgis-server-on-windows7-step-by-step/)
 
 1. Download OSGeo4W installer from [HERE]
 2. I have downloaded the 32-bit version although running a 64-bit machine.
@@ -66,7 +64,6 @@ SetEnv
 ####1. What is QGIS WebClient & why do you need it? ####
   * Under construction
 
-
 ####2. Download QGIS WebClient ####
   * Go to the following GitHub site: https://github.com/qgis/QGIS-Web-Client
   * Download the project as ZIP file (there is a link to your right pane).
@@ -74,6 +71,7 @@ SetEnv
     `c:\OSGeo4W\apache\htdocs`
   * So you now have the QGIS WebClient files in: <br/>
     `c:\OSGeo4W\apache\htdocs\QGIS-Web-Client-master`
+
 ####3. Edit config file ####
   * Locate the following file and open in the text editor.
     `C:\OSGeo4W\apache\conf\httpd.conf`
@@ -87,6 +85,19 @@ ScriptAlias /cgi-bin/ "C:\OSGeo4W/apps/qgis/bin/"
   * You need to restart Apache everytime you make changes to the Apache config file.
   * You can do this by:
     `START MENU --> Programs --> OSGeo4W --> Apache`
+
+####5. Validate installation
+  * Enter the following URL in your web browser.
+    `http://localhost/QGIS-Web-Client-master/site/index.html`
+  * You will end up in the QGIS WebClient Default Client Landing Page. This means you have installed it correctly.
+  * If you have your own QGIS project on your machine, you can edit the above URL to point it to the project like:
+    `http://localhost/QGIS-Web-Client-master/site/qgiswebclient.html?map=C:/OSGeo4W/apache/htdocs/QGIS-Web-Client-master/projects/helloworld.qgs`
+
+
+
+##References##
+  * http://anitagraser.com/2012/04/06/qgis-server-on-windows7-step-by-step/
+  * http://osgeo-org.1560.x6.nabble.com/QGIS-Web-Client-for-Windows-7-td5128712.html
 
 
 [HERE]:https://www.qgis.org/en/site/forusers/download.html
