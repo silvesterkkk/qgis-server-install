@@ -39,7 +39,7 @@ LoadModule fcgid_module modules/mod_fcgid.so
 to
 LoadModule cgi_module modules/mod_cgi.so
 ```
-<br/>
+AND<br/>
 ```
 DefaultInitEnv
 to
