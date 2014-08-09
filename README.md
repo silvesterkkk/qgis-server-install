@@ -30,24 +30,27 @@ http://anitagraser.com/2012/04/06/qgis-server-on-windows7-step-by-step/)
 Edit config file
 ----------------
 
-1. QGIS on windows seems not to work as FastCGI, so open & edit the following file
-  `c:/osgeo4w/httpd.d/httpd_qgis.conf`
+1. Edit the following file: `c:/osgeo4w/httpd.d/httpd_qgis.conf`
+   This is required because QGIS on windows seems not to work as FastCGI
 
-```
-LoadModule fcgid_module modules/mod_fcgid.so
+	```
+	LoadModule fcgid_module modules/mod_fcgid.so
 
-to
+	to
 
-LoadModule cgi_module modules/mod_cgi.so
-```
+	LoadModule cgi_module modules/mod_cgi.so
+	```
 
-```
-DefaultInitEnv
+	```
+	DefaultInitEnv
 
-to
+	to
 
-SetEnv
-```
+	SetEnv
+	```
+
+2. Edit the following file `C:\OSGeo4W\apps\qgis\bin\qgis_mapserv.fcgi.exe`
+	 This is required because the QGIS WebClient which you will install later, can NOT address *.exe files, although the     QGIS Server could.
 
 
 [HERE]:https://www.qgis.org/en/site/forusers/download.html
