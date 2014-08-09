@@ -1,7 +1,7 @@
 #QGIS Server and QGIS WebClient installation procedure (Based on Windows 7, August 2014)#
 
 
-This instruction is constructed from resources available on the web.
+
 
 ##CONTENTS##
 * Installation
