@@ -1,16 +1,16 @@
 #QGIS Server and QGIS WebClient installation procedure (Based on Windows 7, August 2014)#
-
+<br/>
 
 
 
 ##CONTENTS##
-* Installation
+* Install QGIS Server
 * Edit config file / Modify file extention
 * QGIS server validation
 * Download & install QGIS WebClient
 * References
 
-##Installation##
+##INSTALL QGIS Server##
 
 1. Download OSGeo4W installer from [HERE]
 2. I have downloaded the 32-bit version although running a 64-bit machine.
@@ -27,7 +27,7 @@
     - Under WEB, select `Apache Webserver` & `qgis-server: QGIS Server`
     ![alt text](https://cloud.githubusercontent.com/assets/8164012/3790272/eaf76838-1af4-11e4-9e37-f5f15b76eec8.png)
 
-##Edit config file##
+##EDIT CONFIG FILE##
 
 ####1. EDIT httpd_qgis.conf####
 :This is required because QGIS on windows seems not to work as FastCGI<br/>
@@ -52,7 +52,7 @@ SetEnv
   * Delete the extention of the file so that it looks like the following.<br/>
     `c:\OSGeo4W\apps\qgis\bin\qgis_mapserv.fcgi`
 
-###QGIS server validation###
+###QGIS Server VALIDATION###
 : This step will validate the installation of QGIS server.<br/>
   * Type the following URL to your web browser.<br/>
     `http://localhost/qgis/qgis_mapserv.fcgi?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities`
@@ -60,7 +60,7 @@ SetEnv
   * (OPTIONAL) You will receive a map image by sending `GetMap` request  as URL shown below (if you have a QGIS project on your machine).<br/>
     `http://localhost/qgis/qgis_mapserv.fcgi?SERVICE=WMS&VERSION=1.3.0&SRS=EPSG:31467&REQUEST=GetMap&map=C:/path-to-a-simple-qgis-project.qgs&WIDTH=1000&HEIGHT=800&LAYERS=weg,bach&FORMAT=image/png`
   
-###Download and install QGIS WebClient###
+###DOWNLOAD & INSTALL QGIS WebClient###
 ####1. What is QGIS WebClient & why do you need it?####
   * Under construction
 
@@ -95,7 +95,7 @@ ScriptAlias /cgi-bin/ "C:\OSGeo4W/apps/qgis/bin/"
 
 
 
-##References##
+##REFERENCES##
   * http://anitagraser.com/2012/04/06/qgis-server-on-windows7-step-by-step/
   * http://osgeo-org.1560.x6.nabble.com/QGIS-Web-Client-for-Windows-7-td5128712.html
 
