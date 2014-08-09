@@ -54,9 +54,39 @@ SetEnv
   * Delete the extention of the file so that it looks like the following.<br/>
     `c:\OSGeo4W\apps\qgis\bin\qgis_mapserv.fcgi`
 
-####3. QGIS server validation ####
+###QGIS server validation###
 : This step will validate the installation of QGIS server.<br/>
   * Type the following URL to your web browser.<br/>
     `http://localhost/qgis/qgis_mapserv.fcgi?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities`
+  * If you receive XML formatted information on your browser, this means your QGIS server has been installed correctly.<br/>
+  * (OPTIONAL) You will receive a map image by sending `GetMap` request  as URL shown below (if you have a QGIS project on your machine).<br/>
+    `http://localhost/qgis/qgis_mapserv.fcgi?SERVICE=WMS&VERSION=1.3.0&SRS=EPSG:31467&REQUEST=GetMap&map=C:/path-to-a-simple-qgis-project.qgs&WIDTH=1000&HEIGHT=800&LAYERS=weg,bach&FORMAT=image/png`
+  
+###Download and install QGIS WebClient###
+####1. What is QGIS WebClient & why do you need it? ####
+  * Under construction
+
+
+####2. Download QGIS WebClient ####
+  * Go to the following GitHub site: https://github.com/qgis/QGIS-Web-Client
+  * Download the project as ZIP file (there is a link to your right pane).
+  * Unzip the file to the following location.
+    `c:\OSGeo4W\apache\htdocs`
+  * So you now have the QGIS WebClient files in: <br/>
+    `c:\OSGeo4W\apache\htdocs\QGIS-Web-Client-master`
+####3. Edit config file ####
+  * Locate the following file and open in the text editor.
+    `C:\OSGeo4W\apache\conf\httpd.conf`
+  * Go to the line 324 (approx.), and change the line of code as follows.
+```
+ScriptAlias /cgi-bin/ "C:\OSGeo4W/bin/"
+to
+ScriptAlias /cgi-bin/ "C:\OSGeo4W/apps/qgis/bin/"
+```
+####4. Restart Apache ####
+  * You need to restart Apache everytime you make changes to the Apache config file.
+  * You can do this by:
+    `START MENU --> Programs --> OSGeo4W --> Apache`
+
 
 [HERE]:https://www.qgis.org/en/site/forusers/download.html
